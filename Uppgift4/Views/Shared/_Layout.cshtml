@@ -1,40 +1,118 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Content/css/bootstrap.min.css")
+    @Styles.Render("~/Content/css/stilmall.css")
+
+    <title>TvGuiden.Nu</title>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <header>
+        <h1>TvGuiden.nu</h1>
+    </header>
+    <nav>
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only" src="Content/img/menu.png">Toggle navigation</span>
+                    <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
+            <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li><a href="#">Hem</a></li>
+                    <li><a href="#">Om oss</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Läs mer</a></li>
+                    <li><a href="#">Donera</a></li>
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
+        <input type="text" id="myInput" placeholder="Sök" onkeyup="searchChannel1(), searchChannel2(), searchChannel3(), searchChannel4()">
+    </nav>
+    <div>
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application xdxD</p>
-        </footer>
     </div>
+    <footer>
+        <h3>tvguiden@hotmail.com</h3>
+    </footer>
 
+    <script>
+            function searchChannel1() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("channel1");
+                li = ul.getElementsByTagName("li");
+
+                for (i = 1; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    }
+                    else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+            function searchChannel2() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("channel2");
+                li = ul.getElementsByTagName("li");
+
+                for (i = 1; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    }
+                    else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+            function searchChannel3() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("channel3");
+                li = ul.getElementsByTagName("li");
+
+                for (i = 1; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    }
+                    else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+            function searchChannel4() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("channel4");
+                li = ul.getElementsByTagName("li");
+
+                for (i = 1; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    }
+                    else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+    </script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
