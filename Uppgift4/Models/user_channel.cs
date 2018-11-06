@@ -15,8 +15,8 @@ namespace Uppgift4.Models
     public partial class user_channel
     {
         public int user_channel_id { get; set; }
-        public int user_id { get; set; }
-        public int channel_id { get; set; }
+        public Nullable<int> user_id { get; set; }
+        public Nullable<int> channel_id { get; set; }
     
         public virtual channel channel { get; set; }
         public virtual user user { get; set; }

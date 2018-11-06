@@ -10,7 +10,7 @@
             <PropertyRef Name="channel_id" />
           </Key>
           <Property Name="channel_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="channel_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="channel_name" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="program">
           <Key>
@@ -27,16 +27,16 @@
             <PropertyRef Name="user_id" />
           </Key>
           <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="user_channel">
           <Key>
             <PropertyRef Name="user_channel_id" />
           </Key>
           <Property Name="user_channel_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="channel_id" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="channel_id" Type="int" />
         </EntityType>
         <Association Name="channel_id_program_channel">
           <End Role="channel" Type="Self.channel" Multiplicity="1" />
@@ -51,7 +51,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="channel_id_user_channel_channel">
-          <End Role="channel" Type="Self.channel" Multiplicity="1" />
+          <End Role="channel" Type="Self.channel" Multiplicity="0..1" />
           <End Role="user_channel" Type="Self.user_channel" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="channel">
@@ -63,7 +63,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="user_id_user_channel_user">
-          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="user_channel" Type="Self.user_channel" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user">
@@ -102,7 +102,7 @@
             <PropertyRef Name="channel_id" />
           </Key>
           <Property Name="channel_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="channel_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="channel_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="program" Relationship="Self.channel_id_program_channel" FromRole="channel" ToRole="program" />
           <NavigationProperty Name="user_channel" Relationship="Self.channel_id_user_channel_channel" FromRole="channel" ToRole="user_channel" />
         </EntityType>
@@ -122,8 +122,8 @@
             <PropertyRef Name="user_id" />
           </Key>
           <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="user_channel" Relationship="Self.user_id_user_channel_user" FromRole="user" ToRole="user_channel" />
         </EntityType>
         <EntityType Name="user_channel">
@@ -131,8 +131,8 @@
             <PropertyRef Name="user_channel_id" />
           </Key>
           <Property Name="user_channel_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="user_id" Type="Int32" Nullable="false" />
-          <Property Name="channel_id" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="channel_id" Type="Int32" />
           <NavigationProperty Name="channel" Relationship="Self.channel_id_user_channel_channel" FromRole="user_channel" ToRole="channel" />
           <NavigationProperty Name="user" Relationship="Self.user_id_user_channel_user" FromRole="user_channel" ToRole="user" />
         </EntityType>
@@ -149,7 +149,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="channel_id_user_channel_channel">
-          <End Role="channel" Type="Self.channel" Multiplicity="1" />
+          <End Role="channel" Type="Self.channel" Multiplicity="0..1" />
           <End Role="user_channel" Type="Self.user_channel" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="channel">
@@ -161,7 +161,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="user_id_user_channel_user">
-          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
           <End Role="user_channel" Type="Self.user_channel" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user">
@@ -172,7 +172,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="tvtablaEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="tvtablaEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="channel" EntityType="Self.channel" />
           <EntitySet Name="program" EntityType="Self.program" />
           <EntitySet Name="user" EntityType="Self.user" />
@@ -195,7 +195,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="tvtablaModelStoreContainer" CdmEntityContainer="tvtablaEntities">
+        <EntityContainerMapping StorageEntityContainer="tvtablaModelStoreContainer" CdmEntityContainer="tvtablaEntities1">
           <EntitySetMapping Name="channel">
             <EntityTypeMapping TypeName="tvtablaModel.channel">
               <MappingFragment StoreEntitySet="channel">

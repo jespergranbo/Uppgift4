@@ -13,10 +13,10 @@ namespace Uppgift4.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class tvtablaEntities : DbContext
+    public partial class tvtablaEntities1 : DbContext
     {
-        public tvtablaEntities()
-            : base("name=tvtablaEntities")
+        public tvtablaEntities1()
+            : base("name=tvtablaEntities1")
         {
         }
     

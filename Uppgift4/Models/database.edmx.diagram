@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f205bc34fcf1422cbfcc03760c10a626" Name="Diagram1">
+      <Diagram DiagramId="628293a8223e4d6493339c4c9c489ab9" Name="Diagram1">
         <EntityTypeShape EntityType="tvtablaModel.channel" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="tvtablaModel.program" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
         <EntityTypeShape EntityType="tvtablaModel.user" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
