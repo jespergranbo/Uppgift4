@@ -12,20 +12,18 @@ namespace Uppgift4.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class channel
+    public partial class user
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public channel()
+        public user()
         {
-            this.program = new HashSet<program>();
             this.user_channel = new HashSet<user_channel>();
         }
     
-        public int channel_id { get; set; }
-        public string channel_name { get; set; }
+        public int user_id { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<program> program { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<user_channel> user_channel { get; set; }
     }
