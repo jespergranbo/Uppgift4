@@ -5,6 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="sections clearfix">
+    <a id="weekdays">Måndag | </a>
+    <a>Tisdag | </a>
+    <a>Onsdag |</a>
+    <a>Torsdag |</a>
+    <a>Fredag</a>
     <section>
         <ul id="channel1" class="pictures">
             <img src="~/Content/img/svt.png" alt="SVT">
@@ -19,7 +24,7 @@
     </section>
     <section>
         <ul id="channel2" class="pictures">
-            <img src="~/Content/img/svt.png" alt="TV2">
+            <img src="~/Content/img/svt2.png" alt="SVT2">
             @foreach (var item in Model)
             {
                 if (item.channel_id == 2)
