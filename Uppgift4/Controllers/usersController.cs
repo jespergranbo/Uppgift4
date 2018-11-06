@@ -34,7 +34,11 @@ namespace Uppgift4.Controllers
             }
             return View(user);
         }
-
+        //GET: Login
+        public ActionResult Login()
+        {
+            return View();
+        }
         // GET: users/Create
         public ActionResult Create()
         {
