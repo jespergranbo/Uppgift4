@@ -17,4 +17,52 @@
             }
         </ul>
     </section>
+    <section>
+        <ul id="channel2" class="pictures">
+            <img src="~/Content/img/svt.png" alt="TV2">
+            @foreach (var item in Model)
+            {
+                if (item.channel_id == 2)
+                {
+                    <li><a href="#">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                }
+            }
+        </ul>
+    </section>
+    <section>
+        <ul id="channel3" class="pictures">
+            <img src="~/Content/img/tv3.png" alt="TV3">
+            @foreach (var item in Model)
+            {
+                if (item.channel_id == 3)
+                {
+                    <li><a href="#">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                }
+            }
+        </ul>
+    </section>
+    <section>
+        <ul id="channel4" class="pictures">
+            <img src="~/Content/img/tv4.png" alt="TV4">
+            @foreach (var item in Model)
+            {
+                if (item.channel_id == 4)
+                {
+                    <li><a href="#">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                }
+            }
+        </ul>
+    </section>
+    <section>
+        <ul id="channel5" class="pictures">
+            <img src="~/Content/img/tv5.png" alt="TV5">
+            @foreach (var item in Model)
+            {
+                if (item.channel_id == 5)
+                {
+                    <li><a href="#">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                }
+            }
+        </ul>
+    </section>
 </div>
