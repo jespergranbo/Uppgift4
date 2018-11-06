@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Uppgift4.ViewModels
 {
@@ -13,5 +15,6 @@ namespace Uppgift4.ViewModels
         public string program_name { get; set; }
         public DateTime start_time { get; set; }
         public byte[] end_time { get; set; }
+        public string program_type { get; set; }
     }
 }

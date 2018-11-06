@@ -19,6 +19,7 @@ namespace Uppgift4.Models
         public System.DateTime start_time { get; set; }
         public byte[] end_time { get; set; }
         public int channel_id { get; set; }
+        public string program_type { get; set; }
     
         public virtual channel channel { get; set; }
     }

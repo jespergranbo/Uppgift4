@@ -292,20 +292,10 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\users\Create.cshtml" />
-    <Content Include="Views\users\Delete.cshtml" />
-    <Content Include="Views\users\Details.cshtml" />
-    <Content Include="Views\users\Edit.cshtml" />
-    <Content Include="Views\users\Index.cshtml" />
-    <Content Include="Views\channels\Create.cshtml" />
-    <Content Include="Views\channels\Delete.cshtml" />
-    <Content Include="Views\channels\Details.cshtml" />
-    <Content Include="Views\channels\Edit.cshtml" />
-    <Content Include="Views\channels\Index.cshtml" />
+    <Content Include="Views\ChannelProgramDetails\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ChannelProgramDetails\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

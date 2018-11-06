@@ -17,7 +17,7 @@ namespace Uppgift4.Controllers
             List<ProgramVM> programsVMlist = new List<ProgramVM>();
             var programList = (from chn in tvdb.channel
                                join pgn in tvdb.program on chn.channel_id equals pgn.channel_id
-                               select new {chn.channel_id, chn.channel_name, pgn.program_name, pgn.start_time, pgn.end_time, pgn.program_id }).ToList();
+                               select new {chn.channel_id, chn.channel_name, pgn.program_name, pgn.start_time, pgn.end_time, pgn.program_id, pgn.program_type}).ToList();
             foreach (var item in programList)
             {
                 ProgramVM vmItem = new ProgramVM();
@@ -27,6 +27,7 @@ namespace Uppgift4.Controllers
                 vmItem.end_time = item.end_time;
                 vmItem.start_time = item.start_time;
                 vmItem.program_id = item.program_id;
+                vmItem.program_type = item.program_type;
                 programsVMlist.Add(vmItem);
             }
 
