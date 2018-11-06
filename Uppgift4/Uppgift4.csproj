@@ -151,14 +151,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ChannelController.cs" />
+    <Compile Include="Controllers\channelsController.cs" />
+    <Compile Include="Controllers\usersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\channel.cs">
       <DependentUpon>database.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ChannelOperations\ChannelOperations.cs" />
     <Compile Include="Models\database.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -290,7 +290,16 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Channel\index.cshtml" />
+    <Content Include="Views\users\Create.cshtml" />
+    <Content Include="Views\users\Delete.cshtml" />
+    <Content Include="Views\users\Details.cshtml" />
+    <Content Include="Views\users\Edit.cshtml" />
+    <Content Include="Views\users\Index.cshtml" />
+    <Content Include="Views\channels\Create.cshtml" />
+    <Content Include="Views\channels\Delete.cshtml" />
+    <Content Include="Views\channels\Details.cshtml" />
+    <Content Include="Views\channels\Edit.cshtml" />
+    <Content Include="Views\channels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
