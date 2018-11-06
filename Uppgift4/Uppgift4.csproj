@@ -155,34 +155,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\channel.cs">
-      <DependentUpon>database.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\ChannelOperations\ChannelOperations.cs" />
-    <Compile Include="Models\database.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>database.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\database.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>database.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\database.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>database.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\program.cs">
-      <DependentUpon>database.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\user.cs">
-      <DependentUpon>database.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\user_channel.cs">
-      <DependentUpon>database.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -210,16 +183,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Models\database.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>database.edmx</DependentUpon>
-      <LastGenOutput>database.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\database.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>database.edmx</DependentUpon>
-      <LastGenOutput>database.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -244,13 +207,6 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
-    <EntityDeploy Include="Models\database.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>database.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\database.edmx.diagram">
-      <DependentUpon>database.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
