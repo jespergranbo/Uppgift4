@@ -165,15 +165,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>database.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\database.cs">
+    <Compile Include="Models\database.cs" />
+    <Compile Include="Models\database.Designer.cs">
+      <DependentUpon>database.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Models\database1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>database.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\database.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>database.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\program.cs">
       <DependentUpon>database.tt</DependentUpon>
@@ -221,7 +222,7 @@
     <Content Include="Models\database.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>database.edmx</DependentUpon>
-      <LastGenOutput>database.cs</LastGenOutput>
+      <LastGenOutput>database1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -273,7 +274,9 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

@@ -22,6 +22,7 @@
           <Property Name="end_time" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
           <Property Name="channel_id" Type="int" Nullable="false" />
           <Property Name="program_type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -113,10 +114,11 @@
           </Key>
           <Property Name="program_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="program_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="start_time" Type="DateTime" Nullable="false" />
+          <Property Name="start_time" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="end_time" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
           <Property Name="channel_id" Type="Int32" Nullable="false" />
           <Property Name="program_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="channel" Relationship="Self.channel_id_program_channel" FromRole="program" ToRole="channel" />
         </EntityType>
         <EntityType Name="user">
@@ -174,7 +176,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="tvtablaEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="tvtablaEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="channel" EntityType="Self.channel" />
           <EntitySet Name="program" EntityType="Self.program" />
           <EntitySet Name="user" EntityType="Self.user" />
@@ -197,7 +199,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="tvtablaModelStoreContainer" CdmEntityContainer="tvtablaEntities2">
+        <EntityContainerMapping StorageEntityContainer="tvtablaModelStoreContainer" CdmEntityContainer="tvtablaEntities3">
           <EntitySetMapping Name="channel">
             <EntityTypeMapping TypeName="tvtablaModel.channel">
               <MappingFragment StoreEntitySet="channel">
@@ -215,6 +217,7 @@
                 <ScalarProperty Name="end_time" ColumnName="end_time" />
                 <ScalarProperty Name="channel_id" ColumnName="channel_id" />
                 <ScalarProperty Name="program_type" ColumnName="program_type" />
+                <ScalarProperty Name="description" ColumnName="description" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

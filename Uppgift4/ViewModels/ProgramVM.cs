@@ -14,7 +14,8 @@ namespace Uppgift4.ViewModels
         public int program_id { get; set; }
         public string program_name { get; set; }
         public DateTime start_time { get; set; }
-        public byte[] end_time { get; set; }
+        public int end_time { get; set; }
         public string program_type { get; set; }
+        public string description { get; set; }
     }
 }

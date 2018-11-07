@@ -3,7 +3,9 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var id = 1;
 }
+@Styles.Render("~/Content/css/stilmall.css")
 <div class="sections clearfix">
     <a id="weekdays">Måndag | </a>
     <a>Tisdag | </a>
@@ -15,9 +17,20 @@
             <img src="~/Content/img/svt.png" alt="SVT">
             @foreach (var item in Model)
             {
+
                 if (item.channel_id == 1)
                 {
-                    <li><a href="#">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                    <div id="@id" class="overlay">
+                        <div class="popup">
+                            <h2>@item.program_name</h2>
+                            <a class="close" href="#">&times;</a>
+                            <div class="content">
+                                @item.description
+                            </div>
+                        </div>
+                    </div>
+                    id += 1;
                 }
             }
         </ul>
@@ -29,7 +42,8 @@
             {
                 if (item.channel_id == 2)
                 {
-                    <li><a href="#">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                    id = id + 1;
                 }
             }
         </ul>
@@ -41,7 +55,8 @@
             {
                 if (item.channel_id == 3)
                 {
-                    <li><a href="#">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                    id = id + 1;
                 }
             }
         </ul>
@@ -53,7 +68,8 @@
             {
                 if (item.channel_id == 4)
                 {
-                    <li><a href="#">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                    id = id + 1;
                 }
             }
         </ul>
@@ -65,7 +81,8 @@
             {
                 if (item.channel_id == 5)
                 {
-                    <li><a href="#">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                    id = id + 1;
                 }
             }
         </ul>
