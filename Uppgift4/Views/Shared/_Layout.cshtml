@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @*@Styles.Render("~/Content/css/bootstrap.min.css")*@
+    @Styles.Render("~/Content/css/bootstrap.min.css")
     @Styles.Render("~/Content/css/stilmall.css")
     @Scripts.Render("https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
     <title>TvGuiden.Nu</title>
@@ -32,6 +32,16 @@
                     <li><a href="#">Läs mer</a></li>
                     <li><a href="#">Donera</a></li>
                     <li><a href="@Url.Action("Login", "users")">Min sida</a></li>
+                    <a class="button" href="#popup1">Visa notiser</a>
+                    <div id="popup1" class="overlay">
+                        <div class="popup">
+                            <h2>Missa inte dessa program</h2>
+                            <a class="close" href="#">&times;</a>
+                            <div class="content">
+                                Rapport ikväll 19:00 på SVT
+                            </div>
+                        </div>
+                    </div>
                 </ul>
             </div>
         </div>
