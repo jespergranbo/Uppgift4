@@ -45,7 +45,7 @@
                 </ul>
             </div>
         </div>
-        <input type="text" id="myInput" placeholder="Sök" onkeyup="searchChannel1(), searchChannel2(), searchChannel3(), searchChannel4()">
+        <input type="text" id="myInput" placeholder="Sök" onkeyup="searchChannel1(), searchChannel2(), searchChannel3(), searchChannel4(), searchChannel5()">
     </nav>
     <div>
         @RenderBody()
@@ -110,6 +110,23 @@
             input = document.getElementById("myInput");
             filter = input.value.toUpperCase();
             ul = document.getElementById("channel4");
+            li = ul.getElementsByTagName("li");
+
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                }
+                else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        function searchChannel5() {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("channel5");
             li = ul.getElementsByTagName("li");
 
             for (i = 0; i < li.length; i++) {
