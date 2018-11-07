@@ -13,7 +13,7 @@ namespace Uppgift4.Controllers
         // GET: ChannelProgramDetails
         public ActionResult Index()
         {
-            tvtablaEntities3 tvdb = new tvtablaEntities3();
+            tvtablaEntities4 tvdb = new tvtablaEntities4();
             List<ProgramVM> programsVMlist = new List<ProgramVM>();
             var programList = (from chn in tvdb.channel
                                join pgn in tvdb.program on chn.channel_id equals pgn.channel_id

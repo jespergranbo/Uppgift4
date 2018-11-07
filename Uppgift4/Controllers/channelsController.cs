@@ -12,7 +12,7 @@ namespace Uppgift4.Controllers
 {
     public class channelsController : Controller
     {
-        private tvtablaEntities3 db = new tvtablaEntities3();
+        private tvtablaEntities4 db = new tvtablaEntities4();
 
         // GET: channels
         public ActionResult Index()

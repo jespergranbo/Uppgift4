@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d3d9efcebb2c439eb9c2fa8d3cb2ae9f" Name="Diagram1">
-        <EntityTypeShape EntityType="tvtablaModel.channel" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="tvtablaModel.program" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="tvtablaModel.user" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="tvtablaModel.user_channel" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="7f70a754f82f4ab0bafe3719c3dd3f36" Name="Diagram1">
+        <EntityTypeShape EntityType="tvtablaModel.channel" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="tvtablaModel.program" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tvtablaModel.user" Width="1.5" PointX="3.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="tvtablaModel.user_channel" Width="1.5" PointX="6" PointY="2.875" IsExpanded="true" />
         <AssociationConnector Association="tvtablaModel.channel_id_program_channel" ManuallyRouted="false" />
         <AssociationConnector Association="tvtablaModel.channel_id_user_channel_channel" ManuallyRouted="false" />
         <AssociationConnector Association="tvtablaModel.user_id_user_channel_user" ManuallyRouted="false" />
