@@ -303,6 +303,13 @@
     <Content Include="Views\users\Edit.cshtml" />
     <Content Include="Views\users\Index.cshtml" />
     <Content Include="Views\users\Login.cshtml" />
+    <Content Include="Views\ChannelProgramDetails\Monday.cshtml" />
+    <Content Include="Views\ChannelProgramDetails\Tuesday.cshtml" />
+    <Content Include="Views\ChannelProgramDetails\Wednesday.cshtml" />
+    <Content Include="Views\ChannelProgramDetails\Thursday.cshtml" />
+    <Content Include="Views\ChannelProgramDetails\Friday.cshtml" />
+    <Content Include="Views\ChannelProgramDetails\Saturday.cshtml" />
+    <Content Include="Views\ChannelProgramDetails\Sunday.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

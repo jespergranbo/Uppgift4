@@ -17,5 +17,6 @@ namespace Uppgift4.ViewModels
         public int end_time { get; set; }
         public string program_type { get; set; }
         public string description { get; set; }
+        public string viewDay { get; set; }
     }
 }

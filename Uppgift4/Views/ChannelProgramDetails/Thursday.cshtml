@@ -1,17 +1,20 @@
 ﻿@model IEnumerable<Uppgift4.ViewModels.ProgramVM>
-
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Thursday";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var id = 1;
 }
+
 @Styles.Render("~/Content/css/stilmall.css")
+
 <div class="sections clearfix">
     <a href="@Url.Action("Monday", "ChannelProgramDetails")">Måndag | </a>
-    <a>Tisdag | </a>
-    <a>Onsdag |</a>
-    <a>Torsdag |</a>
-    <a>Fredag</a>
+    <a href="@Url.Action("Tuesday", "ChannelProgramDetails")">Tisdag | </a>
+    <a href="@Url.Action("Wednesday", "ChannelProgramDetails")">Onsdag |</a>
+    <a href="@Url.Action("Thursday", "ChannelProgramDetails")">Torsdag |</a>
+    <a href="@Url.Action("Friday", "ChannelProgramDetails")">Fredag |</a>
+    <a href="@Url.Action("Saturday", "ChannelProgramDetails")">Lördag |</a>
+    <a href="@Url.Action("Sunday", "ChannelProgramDetails")">Söndag</a>
     <section>
         <ul id="channel1" class="pictures">
             <img src="~/Content/img/svt.png" alt="SVT">
