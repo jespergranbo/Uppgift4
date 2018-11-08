@@ -151,6 +151,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChannelProgramDetailsController.cs" />
     <Compile Include="Controllers\channelsController.cs" />
     <Compile Include="Controllers\usersController.cs" />
@@ -187,6 +188,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ProgramVM.cs" />
+    <Compile Include="ViewModels\UserProgramVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\bootstrap-theme.css" />
@@ -310,6 +312,9 @@
     <Content Include="Views\ChannelProgramDetails\Friday.cshtml" />
     <Content Include="Views\ChannelProgramDetails\Saturday.cshtml" />
     <Content Include="Views\ChannelProgramDetails\Sunday.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

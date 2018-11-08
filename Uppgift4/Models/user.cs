@@ -11,7 +11,8 @@ namespace Uppgift4.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class user
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,9 +20,11 @@ namespace Uppgift4.Models
         {
             this.user_channel = new HashSet<user_channel>();
         }
-    
+        [Key]
         public int user_id { get; set; }
+        [Required(ErrorMessage ="Du måste ange ett användarnamn")]
         public string username { get; set; }
+        [Required(ErrorMessage = "Du måste ange ett lösenord")]
         public string password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
