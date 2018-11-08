@@ -92,7 +92,7 @@ namespace Uppgift4.Controllers
                                select new { chn.channel_id, chn.channel_name, pgn.program_name, pgn.start_time, pgn.description, pgn.program_id, pgn.program_type, pgn.viewDay }).ToList();
             foreach (var item in programList)
             {
-                if (item.viewDay == "Onsdag")
+                if (item.viewDay == "Måndag")
                 {
                     ProgramVM vmItem = new ProgramVM();
                     vmItem.channel_name = item.channel_name;
@@ -117,7 +117,7 @@ namespace Uppgift4.Controllers
                                select new { chn.channel_id, chn.channel_name, pgn.program_name, pgn.start_time, pgn.description, pgn.program_id, pgn.program_type, pgn.viewDay }).ToList();
             foreach (var item in programList)
             {
-                if (item.viewDay == "Torsdag")
+                if (item.viewDay == "Tisdag")
                 {
                     ProgramVM vmItem = new ProgramVM();
                     vmItem.channel_name = item.channel_name;
@@ -142,7 +142,7 @@ namespace Uppgift4.Controllers
                                select new { chn.channel_id, chn.channel_name, pgn.program_name, pgn.start_time, pgn.description, pgn.program_id, pgn.program_type, pgn.viewDay }).ToList();
             foreach (var item in programList)
             {
-                if (item.viewDay == "Fredag")
+                if (item.viewDay == "Måndag")
                 {
                     ProgramVM vmItem = new ProgramVM();
                     vmItem.channel_name = item.channel_name;
@@ -167,7 +167,7 @@ namespace Uppgift4.Controllers
                                select new { chn.channel_id, chn.channel_name, pgn.program_name, pgn.start_time, pgn.description, pgn.program_id, pgn.program_type, pgn.viewDay }).ToList();
             foreach (var item in programList)
             {
-                if (item.viewDay == "Lördag")
+                if (item.viewDay == "Tisdag")
                 {
                     ProgramVM vmItem = new ProgramVM();
                     vmItem.channel_name = item.channel_name;
@@ -192,7 +192,7 @@ namespace Uppgift4.Controllers
                                select new { chn.channel_id, chn.channel_name, pgn.program_name, pgn.start_time, pgn.description, pgn.program_id, pgn.program_type, pgn.viewDay }).ToList();
             foreach (var item in programList)
             {
-                if (item.viewDay == "Söndag")
+                if (item.viewDay == "Måndag")
                 {
                     ProgramVM vmItem = new ProgramVM();
                     vmItem.channel_name = item.channel_name;

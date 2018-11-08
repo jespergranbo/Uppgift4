@@ -33,7 +33,7 @@
                     svt1 += 1;
                     if (svt1 == 1)
                     {
-                        <br/>@Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })
+                        <br/>@Html.ActionLink("Ta bort", "Delete", new { id = item.user_channel_id })
                     }
                     <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
                     <div id="@id" class="overlay">
@@ -66,9 +66,9 @@
                     svt2 += 1;
                     if (svt2 == 1)
                     {
-                        <br />@Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })
+                        <br />@Html.ActionLink("Ta bort", "Delete", new { id = item.user_channel_id })
                     }
-                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type) | @Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })</a></li>
+                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
                     <div id="@id" class="overlay">
                         <div class="popup">
                             <h2>@item.program_name</h2>
@@ -99,9 +99,9 @@
                     tv3 += 1;
                     if (tv3 == 1)
                     {
-                        <br />@Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })
+                        <br />@Html.ActionLink("Ta bort", "Delete", new { id = item.user_channel_id })
                     }
-                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type) | @Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })</a></li>
+                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type) </a></li>
                     <div id="@id" class="overlay">
                         <div class="popup">
                             <h2>@item.program_name</h2>
@@ -132,9 +132,9 @@
                     tv4 += 1;
                     if (tv4 == 1)
                     {
-                        <br />@Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })
+                        <br />@Html.ActionLink("Ta bort", "Delete", new { id = item.user_channel_id })
                     }
-                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type) | @Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })</a></li>
+                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type) </a></li>
                     <div id="@id" class="overlay">
                         <div class="popup">
                             <h2>@item.program_name</h2>
@@ -165,9 +165,9 @@
                     tv5 += 1;
                     if (tv5 == 1)
                     {
-                        <br />@Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })
+                        <br />@Html.ActionLink("Ta bort", "Delete", new { id = item.user_channel_id })
                     }
-                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type) | @Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })</a></li>
+                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
                     <div id="@id" class="overlay">
                         <div class="popup">
                             <h2>@item.program_name</h2>
@@ -188,4 +188,8 @@
             }
         </ul>
     </section>
+</div>
+
+<div>
+    <p><a href="@Url.Action("Login", "Account")">Logga ut</a></p>
 </div>
