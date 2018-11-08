@@ -29,5 +29,7 @@ namespace Uppgift4.Models
         public virtual DbSet<program> program { get; set; }
         public virtual DbSet<user> user { get; set; }
         public virtual DbSet<user_channel> user_channel { get; set; }
+
+        public System.Data.Entity.DbSet<Uppgift4.ViewModels.UserProgramVM> UserProgramVMs { get; set; }
     }
 }

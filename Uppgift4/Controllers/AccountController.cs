@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Uppgift4.Models;
@@ -64,17 +65,18 @@ namespace Uppgift4.Controllers
         public ActionResult LoggedIn()
         {
             tvtablaEntities4 tvdb = new tvtablaEntities4();
-            if(Session["UserId"] != null)
+            if (Session["UserId"] != null)
             {
                 List<UserProgramVM> userChannel = new List<UserProgramVM>();
                 var savedChannels = (from usr in tvdb.user_channel
-                                   join chn in tvdb.channel on usr.channel_id equals chn.channel_id
-                                   select new { usr.user_id, chn.channel_name, usr.channel_id}).ToList();
+                                     join chn in tvdb.channel on usr.channel_id equals chn.channel_id
+                                     select new { usr.user_channel_id, usr.user_id, chn.channel_name, usr.channel_id }).ToList();
                 foreach (var item in savedChannels)
                 {
                     if (item.user_id == Convert.ToInt32(Session["UserId"]))
                     {
                         UserProgramVM userItem = new UserProgramVM();
+                        userItem.user_channel_id = item.user_channel_id;
                         userItem.user_id = item.user_id;
                         userItem.channel_name = item.channel_name;
                         userItem.channel_id = item.channel_id;
@@ -87,6 +89,32 @@ namespace Uppgift4.Controllers
             {
                 return RedirectToAction("Login");
             }
+        }
+        public ActionResult Delete(int? id)
+        {
+            tvtablaEntities4 db = new tvtablaEntities4();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            user_channel channel = db.user_channel.Find(id);
+            if (channel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(channel);
+        }
+
+        // POST: channels/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            tvtablaEntities4 db = new tvtablaEntities4();
+            user_channel channel = db.user_channel.Find(id);
+            db.user_channel.Remove(channel);
+            db.SaveChanges();
+            return RedirectToAction("LoggedIn");
         }
     }
 }
