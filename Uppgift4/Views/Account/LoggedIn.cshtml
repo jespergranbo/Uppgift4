@@ -3,44 +3,189 @@
 @{
     ViewBag.Title = "LoggedIn";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var id = 1;
+    var svt1 = 0;
+    var svt2 = 0;
+    var tv3 = 0;
+    var tv4 = 0;
+    var tv5 = 0;
 }
 
-<h2>LoggedIn</h2>
+@Styles.Render("~/Content/css/stilmall.css")
+<div class="sections clearfix">
+    <a href="@Url.Action("Monday", "ChannelProgramDetails")">Måndag | </a>
+    <a href="@Url.Action("Tuesday", "ChannelProgramDetails")">Tisdag | </a>
+    <a href="@Url.Action("Wednesday", "ChannelProgramDetails")">Onsdag |</a>
+    <a href="@Url.Action("Thursday", "ChannelProgramDetails")">Torsdag |</a>
+    <a href="@Url.Action("Friday", "ChannelProgramDetails")">Fredag |</a>
+    <a href="@Url.Action("Saturday", "ChannelProgramDetails")">Lördag |</a>
+    <a href="@Url.Action("Sunday", "ChannelProgramDetails")">Söndag</a>
+    <p>@Html.ActionLink("Lägg till kanal", "Create")</p>
+    <p>Välkommen @Session["username"] ditt ID är @Session["UserId"]</p>
+    <section>
+        <ul id="channel1" class="pictures">
+            <img src="~/Content/img/svt.png" alt="SVT">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.user_id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.channel_id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.channel_name)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.user_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.channel_id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.channel_name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.user_channel_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.user_channel_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.user_channel_id })
-        </td>
-    </tr>
-}
-
-</table>
+            @foreach (var item in Model)
+            {
+                if (item.channel_id == 1)
+                {
+                    svt1 += 1;
+                    if (svt1 == 1)
+                    {
+                        <br/>@Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })
+                    }
+                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type)</a></li>
+                    <div id="@id" class="overlay">
+                        <div class="popup">
+                            <h2>@item.program_name</h2>
+                            <a class="close" href="#">&times;</a>
+                            <div class="content">
+                                @item.description
+                            </div>
+                        </div>
+                    </div>
+                    id += 1;
+                }
+            }
+            @if (svt1 == 0)
+            {
+                <script>
+                    $("#channel1").hide();
+                </script>
+            }
+        </ul>
+    </section>
+    <section>
+        <ul id="channel2" class="pictures">
+            <img src="~/Content/img/svt2.png" alt="SVT2">
+            @foreach (var item in Model)
+            {
+                if (item.channel_id == 2)
+                {
+                    svt2 += 1;
+                    if (svt2 == 1)
+                    {
+                        <br />@Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })
+                    }
+                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type) | @Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })</a></li>
+                    <div id="@id" class="overlay">
+                        <div class="popup">
+                            <h2>@item.program_name</h2>
+                            <a class="close" href="#">&times;</a>
+                            <div class="content">
+                                @item.description
+                            </div>
+                        </div>
+                    </div>
+                    id += 1;
+                }
+            }
+            @if (svt2 == 0)
+            {
+                <script>
+                    $("#channel2").hide();
+                </script>
+            }
+        </ul>
+    </section>
+    <section>
+        <ul id="channel3" class="pictures">
+            <img src="~/Content/img/tv3.png" alt="TV3">
+            @foreach (var item in Model)
+            {
+                if (item.channel_id == 3)
+                {
+                    tv3 += 1;
+                    if (tv3 == 1)
+                    {
+                        <br />@Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })
+                    }
+                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type) | @Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })</a></li>
+                    <div id="@id" class="overlay">
+                        <div class="popup">
+                            <h2>@item.program_name</h2>
+                            <a class="close" href="#">&times;</a>
+                            <div class="content">
+                                @item.description
+                            </div>
+                        </div>
+                    </div>
+                    id += 1;
+                }
+            }
+            @if (tv3 == 0)
+            {
+                <script>
+                    $("#channel3").hide();
+                </script>
+            }
+        </ul>
+    </section>
+    <section>
+        <ul id="channel4" class="pictures">
+            <img src="~/Content/img/tv4.png" alt="TV4">
+            @foreach (var item in Model)
+            {
+                if (item.channel_id == 4)
+                {
+                    tv4 += 1;
+                    if (tv4 == 1)
+                    {
+                        <br />@Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })
+                    }
+                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type) | @Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })</a></li>
+                    <div id="@id" class="overlay">
+                        <div class="popup">
+                            <h2>@item.program_name</h2>
+                            <a class="close" href="#">&times;</a>
+                            <div class="content">
+                                @item.description
+                            </div>
+                        </div>
+                    </div>
+                    id += 1;
+                }
+            }
+            @if (tv4 == 0)
+            {
+                <script>
+                    $("#channel4").hide();
+                </script>
+            }
+        </ul>
+    </section>
+    <section>
+        <ul id="channel5" class="pictures">
+            <img src="~/Content/img/tv5.png" alt="TV5">
+            @foreach (var item in Model)
+            {
+                if (item.channel_id == 5)
+                {
+                    tv5 += 1;
+                    if (tv5 == 1)
+                    {
+                        <br />@Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })
+                    }
+                    <li><a href="#@id">@Html.DisplayFor(modelItem => item.start_time) | @Html.DisplayFor(modelItem => item.program_name) | @Html.DisplayFor(modelItem => item.program_type) | @Html.ActionLink("Delete", "Delete", new { id = item.user_channel_id })</a></li>
+                    <div id="@id" class="overlay">
+                        <div class="popup">
+                            <h2>@item.program_name</h2>
+                            <a class="close" href="#">&times;</a>
+                            <div class="content">
+                                @item.description
+                            </div>
+                        </div>
+                    </div>
+                    id += 1;
+                }
+            }
+            @if (tv5 == 0)
+            {
+                <script>
+                    $("#channel5").hide();
+                </script>
+            }
+        </ul>
+    </section>
+</div>

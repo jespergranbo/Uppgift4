@@ -1,0 +1,44 @@
+﻿@model Uppgift4.Models.user_channel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="form-horizontal">
+    <h3>Lägg till en ny kanal</h3>
+    <p>@Session["username"] ditt ID är @Session["UserId"]</p>
+    <div>
+        <p>ID för SVT: 1</p>
+        <p>ID för SVT2: 2</p>
+        <p>ID för TV3: 3</p>
+        <p>ID för TV4: 4</p>
+        <p>ID för TV5: 5</p>
+    </div>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.user_id, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.user_id, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.user_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.channel_id, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.channel_id, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.channel_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Lägg till kanal" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}

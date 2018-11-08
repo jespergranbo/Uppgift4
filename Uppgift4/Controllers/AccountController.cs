@@ -70,7 +70,8 @@ namespace Uppgift4.Controllers
                 List<UserProgramVM> userChannel = new List<UserProgramVM>();
                 var savedChannels = (from usr in tvdb.user_channel
                                      join chn in tvdb.channel on usr.channel_id equals chn.channel_id
-                                     select new { usr.user_channel_id, usr.user_id, chn.channel_name, usr.channel_id }).ToList();
+                                     join prg in tvdb.program on usr.channel_id equals prg.channel_id
+                                     select new { usr.user_channel_id, usr.user_id, chn.channel_name, usr.channel_id, prg.program_name, prg.start_time, prg.program_type, prg.description}).ToList();
                 foreach (var item in savedChannels)
                 {
                     if (item.user_id == Convert.ToInt32(Session["UserId"]))
@@ -80,6 +81,10 @@ namespace Uppgift4.Controllers
                         userItem.user_id = item.user_id;
                         userItem.channel_name = item.channel_name;
                         userItem.channel_id = item.channel_id;
+                        userItem.program_name = item.program_name;
+                        userItem.program_type = item.program_type;
+                        userItem.start_time = item.start_time;
+                        userItem.description = item.description;
                         userChannel.Add(userItem);
                     }
                 }
@@ -105,7 +110,6 @@ namespace Uppgift4.Controllers
             return View(channel);
         }
 
-        // POST: channels/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -115,6 +119,26 @@ namespace Uppgift4.Controllers
             db.user_channel.Remove(channel);
             db.SaveChanges();
             return RedirectToAction("LoggedIn");
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "user_channel_id,user_id,channel_id")] user_channel channelUser)
+        {
+            tvtablaEntities4 db = new tvtablaEntities4();
+            if (ModelState.IsValid)
+            {
+                db.user_channel.Add(channelUser);
+                db.SaveChanges();
+                return RedirectToAction("LoggedIn");
+            }
+
+            return View(channelUser);
         }
     }
 }

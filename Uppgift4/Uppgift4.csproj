@@ -299,12 +299,6 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\ChannelProgramDetails\Index.cshtml" />
-    <Content Include="Views\users\Create.cshtml" />
-    <Content Include="Views\users\Delete.cshtml" />
-    <Content Include="Views\users\Details.cshtml" />
-    <Content Include="Views\users\Edit.cshtml" />
-    <Content Include="Views\users\Index.cshtml" />
-    <Content Include="Views\users\Login.cshtml" />
     <Content Include="Views\ChannelProgramDetails\Monday.cshtml" />
     <Content Include="Views\ChannelProgramDetails\Tuesday.cshtml" />
     <Content Include="Views\ChannelProgramDetails\Wednesday.cshtml" />
@@ -313,10 +307,10 @@
     <Content Include="Views\ChannelProgramDetails\Saturday.cshtml" />
     <Content Include="Views\ChannelProgramDetails\Sunday.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\LoggedIn.cshtml" />
     <Content Include="Views\Account\Delete.cshtml" />
+    <Content Include="Views\Account\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
